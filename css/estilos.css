@@ -1,0 +1,6 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;         /* Para que los elementos hijo se posicionen correctamente */
+}

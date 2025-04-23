@@ -1,0 +1,62 @@
+/* Contenedor principal del carrusel */
+.carrusel-container {
+    perspective: 1500px;              /* Añade efecto de perspectiva 3D */
+    display: grid;                    /* Usa grid para centrar contenido */
+    width: 100%;                      /* Ocupa todo el ancho disponible */
+    min-height: auto;                 /* Altura mínima del 50% de la ventana */
+    place-items: center;              /* Centra los elementos vertical y horizontalmente */
+}
+
+/* Elemento que rota y contiene las caras */
+.carrusel {
+    padding-top: 10rem;
+    padding: 5rem;
+    position: relative;               /* Posicionamiento relativo para las caras */
+    width: 100%;                      /* Ocupa todo el ancho del contenedor */
+    min-height: 75vh;                /* Altura mínima igual a la ventana */
+    transform-style: preserve-3d;      /* Mantiene el efecto 3D en elementos hijos */
+    transform: rotateY(0deg);         /* Posición inicial sin rotación */
+    transition: transform 2s ease;     /* Animación suave de 1 segundo */
+    display: flex;                    /* Usa flexbox para alinear contenido */
+    justify-content: center;          /* Centra horizontalmente */
+    align-items: center;              /* Centra verticalmente */
+}
+
+/* Estilo común para todas las caras del carrusel */
+.face {
+    position:absolute;               /* Posicionamiento absoluto respecto al carrusel */
+    width: 300px;                     /* Ancho fijo de cada cara */
+    height: 300px;                    /* Alto fijo de cada cara */
+    background-color: rgba(255, 166, 0, 0); /* Fondo transparente */
+    display: flex;                    /* Usa flexbox para centrar imagen */
+    justify-content: center;          /* Centra horizontalmente la imagen */
+    align-items: center;              /* Centra verticalmente la imagen */
+}
+
+/* Estilo para las imágenes dentro de las caras */
+.face img {
+    width: 200%;                      /* Ocupa todo el ancho de la cara */
+    height: 100%;                     /* Ocupa todo el alto de la cara */
+    object-fit: cover;  
+    border-radius: 1rem;              /* Mantiene proporción de la imagen */
+}
+
+/* Posicionamiento de la cara frontal */
+.front {
+    transform: rotatey(0deg) translateZ(-300px) scale(1); /* Sin rotación, alejada 300px, escalada a la mitad */
+}
+
+/* Posicionamiento de la cara derecha */
+.right {
+    transform: rotateY(90deg) translateZ(-300px) scale(1); /* Rotada 90°, alejada 300px, escalada */
+}
+
+/* Posicionamiento de la cara trasera */
+.back {
+    transform: rotateY(180deg) translateZ(-300px) scale(1); /* Rotada 180°, alejada 300px, escalada */
+}
+
+/* Posicionamiento de la cara izquierda */
+.left {
+    transform: rotateY(-90deg) translateZ(-300px) scale(1); /* Rotada -90°, alejada 300px, escalada */
+}
