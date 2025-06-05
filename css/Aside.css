@@ -1,0 +1,107 @@
+/* ========================= */
+/* ASIDE - Categorías */
+/* ========================= */
+
+.container__aside {
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Ancho fijo del aside */
+  background-color: #191A23;
+  padding: 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+}
+
+.aside-categorias {
+  flex: 0 0 2px; /* ancho fijo */
+  background-color: #191A23;
+  padding: 50px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  padding-bottom: 2rem
+
+}
+
+.aside-categorias h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Lista principal */
+.lista-categorias {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ítems de categoría principal */
+.categoria-item > .categoria-enlace {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  border: none;
+  background: none;
+  width: 100%;
+}
+
+.categoria-icono {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.categoria-item.activa .categoria-icono {
+  transform: rotate(180deg);
+}
+
+/* Subcategorías */
+.subcategorias {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+  display: none;
+}
+
+.categoria-item.activa .subcategorias {
+  display: block;
+}
+
+.subcategorias li a {
+  display: block;
+  padding: 0.2rem 0;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.subcategorias li a:hover {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.card__product h1 {
+
+  color: #ffffff;
+}
+
+@media screen and (max-width: 650px) {
+  .container__aside {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    padding: 10px; /* Menos padding */
+  }
+
+  .aside-categorias {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    padding: 20px; /* Menos padding */
+  }
+  
+}

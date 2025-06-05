@@ -60,3 +60,20 @@
 .left {
     transform: rotateY(-90deg) translateZ(-300px) scale(1); /* Rotada -90°, alejada 300px, escalada */
 }
+
+@media  screen and (max-width: 768px) {
+    .carrusel-container {
+        padding: 0.5rem; /* Reduce el padding en pantallas pequeñas */
+    }
+    
+    .face {
+        width: 200px; /* Reduce el ancho de las caras */
+        height: 100px; /* Reduce el alto de las caras */
+    }
+    
+    .face img {
+        width: 200%; /* Ajusta la imagen al nuevo tamaño de la cara */
+        height: 100%; /* Mantiene proporción de la imagen */
+    }
+    
+}

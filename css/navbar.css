@@ -1,21 +1,22 @@
+/* ==== Estilos generales navbar === */
 
-.page-title{
+.page-title {
   width: 100% !important;
-    font-size: 1.5em !important;
-    font-weight: 600 !important;
-    color: rgb(255, 255, 255) !important;
-    text-align: center !important;
-    margin-bottom : 1rem!important;
-
+  font-size: 1.5em !important;
+  font-weight: 600 !important;
+  color: rgb(255, 255, 255) !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+  opacity: 0.75 !important;
 }
 
-.page-title a{
-    color: rgb(255, 255, 255) !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
-    transition: color 0.3s ease !important;
-    margin: 0.5rem;
-    text-align: center; /* Transición para el color al pasar el mouse */
+.page-title a {
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease !important;
+  margin: 0.5rem;
+  text-align: center;
 }
 
 .page-title h2 {
@@ -23,153 +24,125 @@
   font-weight: 600;
   color: rgb(255, 255, 255);
   text-align: center;
-  margin: 0; /* Elimina márgenes adicionales */
+  margin: 0;
 }
 
-.container-fluid{
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos */
-    justify-content: center;
-    justify-items: flex-center;
-    grid-template-rows: auto -1fr auto;
-    padding: -2rem !important;
-    margin: 0 !important;
-    width: 100% !important;
-    background-color: #191A23 !important;
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  width: 100% !important;
+  background-color: #191A23 !important;
+  flex-wrap: wrap; /* para que el menú pueda ir a nueva línea */
 }
+
+
+.abrir-menu,
+.cerrar-menu {
+    display: none;
+}
+
 nav ul {
-    display: flex; /* Alinea los elementos del menú en una fila */
-    list-style: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Elimina el padding */
-    margin: 0; /* Elimina el margen */
-    justify-content: center; /* Centra las opciones horizontalmente */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 
 nav ul li {
   padding-top: 0.75rem;
-  margin: 1rem; /* Espaciado horizontal entre las opciones */
+  margin: 1rem;
 }
 
 nav ul li a {
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    color: rgb(255, 255, 255); /* Cambia el color del texto */
-    font-weight: bold; /* Hace el texto más grueso */
-    transition: color 0.3s ease; /* Transición para el color al pasar el mouse */
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: orange; /* Cambia el color al pasar el mouse */
+  color: orange;
 }
 
-.hoverable{
-    float: inline-start;
-    display:grid;
-    backface-visibility: hidden;
-    vertical-align: middle;
-    position:relative;
-    box-shadow: 0 0 1px rgba(0,0,0,0);
-    transform: translateZ(0);
-    transition-duration: .3s;
-    transition-property:transform;
+.hoverable {
+  float: inline-start;
+  display: grid;
+  backface-visibility: hidden;
+  vertical-align: middle;
+  position: relative;
+  box-shadow: 0 0 1px rgba(0,0,0,0);
+  transform: translateZ(0);
+  transition-duration: .3s;
+  transition-property: transform;
+}
+
+.hoverable:before {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: radial-gradient(ellipse at center, rgb(255, 162, 0) 0%, rgba(255, 255, 255, 0) 80%);
+  transition-duration: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.hoverable:hover, .hoverable:active, .hoverable:focus {
+  transform: translateY(-5px);
+}
+
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+/* Bounce Animation */
+@keyframes bounce-animation {
+  16.65% {
+    transform: translateY(8px);
   }
-  
-  .hoverable:before{
-    position:absolute;
-    pointer-events: none;
-    z-index:-1;
-    content: '';
-    top: 100%;
-    left: 5%;
-    height:10px;
-    width:90%;
-    opacity:0;
-    background: -webkit-radial-gradient(center, ellipse, rgb(255, 166, 0) 0%, rgba(255, 255, 255, 0) 80%);
-    background: radial-gradient(ellipse at center, rgb(255, 162, 0) 0%, rgba(255, 255, 255, 0) 80%);
-    /* W3C */
-    transition-duration: 0.3s;
-    transition-property: transform, opacity;
+  33.3% {
+    transform: translateY(-6px);
   }
-  
-  .hoverable:hover, .hoverable:active, .hoverable:focus{
-    transform: translateY(-5px);
+  49.95% {
+    transform: translateY(4px);
   }
-  .hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before{
-    opacity: 1;
-    transform: translateY(-5px);
+  66.6% {
+    transform: translateY(-2px);
   }
-  
-  
-  
-  @keyframes bounce-animation {
-    16.65% {
-      -webkit-transform: translateY(8px);
-      transform: translateY(8px);
-    }
-  
-    33.3% {
-      -webkit-transform: translateY(-6px);
-      transform: translateY(-6px);
-    }
-  
-    49.95% {
-      -webkit-transform: translateY(4px);
-      transform: translateY(4px);
-    }
-  
-    66.6% {
-      -webkit-transform: translateY(-2px);
-      transform: translateY(-2px);
-    }
-  
-    83.25% {
-      -webkit-transform: translateY(1px);
-      transform: translateY(1px);
-    }
-  
-    100% {
-      -webkit-transform: translateY(0);
-      transform: translateY(0);
-    }
+  83.25% {
+    transform: translateY(1px);
   }
-  
-  .bounce {
-    animation-name: bounce-animation;
-    animation-duration: 2s;
+  100% {
+    transform: translateY(0);
   }
-  
-  
-  
-  /*everything below here is just setting up the page, so dont worry about it */
-  
-  
-  @media (min-width: 768px) {
-    .navbar{
-      text-align: center !important;
-      float: none;
-      display: inline-block;
-    }
+}
+
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration: 2s;
+}
+
+/* Responsive: móvil (pantallas ≤ 768px) */
+@media (max-width < 900px) {
+  .container-fluid {
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
-  
-  body {
-    background-color: rgba(0, 0, 0, 0);
-    font-weight:600;
-    text-align:center !important;
-    color: rgb(0, 0, 0);
+
+  .hoverable{
+    display: none;
   }
-  
-  nav {
-    background: none !important;
-    text-transform:uppercase;
-    li {
-      margin-left: 3em;
-      margin-right: 3em;
-      a{
-        transition: .5s color ease-in-out;
-      }
-    }
+
+  .abrir-menu{
+    display: block;
   }
-  
-  .page-title {
-    opacity: .75 !important;
-  }
-  
+}

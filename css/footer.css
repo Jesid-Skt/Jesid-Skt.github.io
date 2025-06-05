@@ -7,7 +7,7 @@
 }
 
 :root{
-    --color-primario: #B9FF66;
+    --color-primario: orange;
     --color-secundario: #191A23;
     --gray-color: #F3F3F3;
     --padding-container: 80px 0;
@@ -66,6 +66,8 @@ body{
     gap: 1rem;
     text-align: center !important;
 }
+
+
 .footer__links a{
     color: white !important;
     text-decoration: none !important;
@@ -73,24 +75,19 @@ body{
     transition: all 0.3s ease-in-out;
 }
 
+.footer__logo-container {
+    width: 100px;
+    height: 100px;
 
-.footer__links:hover {
-    color: white;
-    text-decoration: none !important;
-    background-color: orange;
+    footer__logo{
+        width: 200px;
+        height: 100px;
+    }
 }
 
 
-.footer__link {
-    color: white !important;
-    text-decoration: none !important;
-}
 
-.footer__link:hover {
-    color: white;
-    text-decoration: none !important;
-    background-color: orange;
-}
+
 
 .footer__copy {
     justify-self: center;
@@ -132,10 +129,15 @@ body{
 }
 
 .footer__submit {
-    background-color: var(--color-primario);
-    color: var(--color-secundario);
+    background-color: var(--gray-color);
+    color: black;
     border: none;
     border-radius: 6px;
+}
+
+.footer__submit:hover {
+    cursor: pointer;
+    background-color: orange;
 }
 
 .footer__social {
@@ -234,7 +236,7 @@ body{
     }
 
     .footer__submit {
-        background-color: #B9FF66;
+        background-color: #fc9f1d;
         color: black;
         border: none;
         border-radius: 6px;
@@ -254,3 +256,4 @@ body{
 
 
 }
+
